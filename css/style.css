@@ -314,6 +314,32 @@ footer {
 
 
 /*---------------------------------------
+    Empresa section
+-----------------------------------------*/
+#empresas {
+    background: url('../images/blue.jpg') 50% 0 repeat-y fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    color: #ffffff;
+    display: -webkit-box;
+    display: -webkit-flex;
+     display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+     -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+#empresas h3 {
+  letter-spacing: 2px;
+}
+
+
+/*---------------------------------------
    formularioEmpresa  section
 -----------------------------------------*/
 #formularioEmpresa img {
