@@ -286,6 +286,34 @@ footer {
 
 
 /*---------------------------------------
+    Alumnado section
+-----------------------------------------*/
+#alumnado {
+    background: url('../images/blue.jpg') 50% 0 repeat-y fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    color: #ffffff;
+    display: -webkit-box;
+    display: -webkit-flex;
+     display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+     -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+#alumnado h3 {
+  letter-spacing: 2px;
+}
+#alumnado p
+{font-size:100;}
+
+
+/*---------------------------------------
    formularioEmpresa  section
 -----------------------------------------*/
 #formularioEmpresa img {
@@ -393,6 +421,7 @@ footer {
   }
 
   #formularios { height: 65vh; }
+	#alumnado { height: 65vh; }
 
   #video iframe {
     margin-top: 42px;
@@ -440,5 +469,7 @@ footer {
   #formularios {
     height: 100vh;
   }
-
+	#alumnado {
+    height: 100vh;
+  }
 }
