@@ -92,7 +92,7 @@ footer {
     padding-bottom: 12px;
 }
 
-#intro .btn,
+#formularios .btn,
 #contact .btn {
     background: transparent;
     border: 2px solid #ffffff;
@@ -108,9 +108,9 @@ footer {
     transition: all 0.4s ease-in-out;
 }
 
-#intro .btn-danger,
+#formularios .btn-danger,
 #contact .btn-danger {
-    background: #f2545f;
+    background: #88caea;
     border-color: transparent;
 }
 
@@ -118,7 +118,7 @@ footer {
   border-radius: 100px;
 }
 
-#intro .btn-danger:hover {
+#formularios .btn-danger:hover {
   background: transparent;
   border-color: #ffffff;
   color: #ffffff;
@@ -128,7 +128,7 @@ footer {
   background: #222;
 }
 
-#intro .btn-default:hover {
+#formularios .btn-default:hover {
     background: #ffffff;
     color: #333333;
     border-color: transparent;
@@ -259,10 +259,10 @@ footer {
 
 
 /*---------------------------------------
-    Intro section
+    formularios section
 -----------------------------------------*/
-#intro {
-    background: url('../images/intro-bg.jpg') 50% 0 repeat-y fixed;
+#formularios {
+    background: url('../images/blue.jpg') 50% 0 repeat-y fixed;
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center center;
@@ -279,7 +279,7 @@ footer {
     text-align: center;
 }
 
-#intro h3 {
+#formularios h3 {
   letter-spacing: 2px;
 }
 
@@ -304,301 +304,8 @@ footer {
 }
 
 #detail .fa {
-  color: #f2545f;
+  color: #9fb9bd;
   font-size: 48px;
-}
-
-
-
-/*---------------------------------------
-    Video section
------------------------------------------*/
-#video iframe {
-  border: none;
-}
-
-
-
-/*---------------------------------------
-   Speakers section
------------------------------------------*/
-#speakers {
-    background: #f9f9f9;
-}
-
-#speakers h3 {
-    font-size: 18px;
-    margin-bottom: 0px;
-}
-
-#speakers h6 {
-  color: #666;
-  margin-top: 4px;
-}
-
-#speakers img {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-}
-
-#speakers .col-md-3 {
-    display: block;
-    width: 100%;
-    padding-top: 30px;
-    padding-bottom: 20px;
-    margin-bottom: 22px;
-}
-
-#speakers .speakers-wrapper {
-    background: #ffffff;
-    padding-bottom: 22px;
-}
-
-
-
-/*---------------------------------------
-   Program section
------------------------------------------*/
-#program h4 {
-    color: #808080;
-    font-size: 12px;
-}
-
-#program h3 {
-  margin-top: 16px;
-}
-
-#program .program-divider {
-    border: 1px solid #f9f9f9;
-    margin-top: 32px;
-    margin-bottom: 42px;
-}
-
-#program span {
-    padding-right: 12px;
-}
-
-#program img {
-  border-radius: 50%;
-}
-
-.nav-tabs {
-  margin-bottom: 20px;
-}
-.nav-tabs > li {
-  float: left;
-  margin-bottom: -1px;
-}
-.nav-tabs > li > a {
-  color: #000000;
-  font-weight: 600;
-  margin-right: 2px;
-  line-height: 1.42857143;
-  border: none;
-  border-radius: 0px;
-}
-.nav-tabs > li > a:hover {
-  background-color: transparent;
-}
-.nav-tabs > li.active > a,
-.nav-tabs > li.active > a:hover,
-.nav-tabs > li.active > a:focus {
-  color: #f2545f;
-  cursor: default;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-bottom-color: #999;
-}
-.tab-content {
-  padding-top: 20px;
-}
-
-
-
-/*---------------------------------------
-    Regsiter section
------------------------------------------*/
-#formularioEstudiante {
-    background: url('../images/formularioEstudiante-bg.jpg') 50% 0 repeat-y fixed;
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-position: center center;
-    color: #ffffff;
-}
-
-#formularioEstudiante .form-control {
-  background: transparent;
-  border: 2px solid #ffffff;
-  border-radius: 0px;
-  color: #ffffff;
-  margin-bottom: 16px;
-}
-
-#formularioEstudiante input {
-  height: 45px;
-}
-
-#formularioEstudiante input[type="submit"] {
-  background: #f2545f;
-  border-radius: 100px;
-  border: none;
-  color: #ffffff;
-  letter-spacing: 2px;
-  height: 50px;
-  margin-top: 12px;
-  transition: all 0.4s ease-in-out;
-}
-
-#formularioEstudiante input[type="submit"]:hover {
-  background: #ffffff;
-  color: #222;
-}
-
-
-
-/*---------------------------------------
-   Faq section
------------------------------------------*/
-#faq {
-  background: #f9f9f9;
-  padding-top: 8rem;
-  padding-bottom: 8rem;
-}
-
-#faq .panel-group {
-  margin-top: 32px;
-}
-
-#faq .panel-group .panel {
-  margin-bottom: 8px;
-}
-
-#faq .panel-default {
-  border: none;
-}
-
-#faq .panel-default>.panel-heading {
-  background: #f0f0f0;
-  color: #505050;
-}
-
-#faq .panel-heading {
-  border: none;
-  padding-top: 8px;
-  padding-bottom: 6px;
-}
-
-#faq .panel-default>.panel-heading+.panel-collapse>.panel-body {
-  border-top: none;
-  padding-top: 22px;
-  padding-left: 32px;
-  padding-bottom: 22px;
-}
-
-#faq .panel-heading .panel-title a[data-toggle="collapse"] {
-  font-size: 18px;
-  font-weight: 500;
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 100%;
-  padding: 10px 15px;
-}
-
-#faq .panel-heading .panel-title a[data-toggle="collapse"]::after {
-  content: "-";
-  display: block;
-  position: absolute;
-  line-height: 1;
-  right: 1em;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#faq .panel-heading .panel-title a[data-toggle="collapse"].collapsed::after {
-  content: "+";
-}
-
-
-
-/*---------------------------------------
-   Venue section
------------------------------------------*/
-#venue {
-    background: url('../images/venue-bg.jpg') 50% 0 repeat-y fixed;
-    background-size: cover;
-    background-position: center center;
-    padding-top: 7rem;
-    padding-bottom: 7rem;
-}
-
-#venue p {
-  padding-top: 12px;
-  padding-bottom: 18px;
-}
-
-
-
-/*---------------------------------------
-   Sponsors section
------------------------------------------*/
-#sponsors img {
-  margin-top: 18px;
-}
-
-
-
-/*---------------------------------------
-   Contact section
------------------------------------------*/
-#contact {
-    background: url('../images/contact-bg.jpg') 50% 0 repeat-y fixed;
-    background-size: cover;
-    background-position: center center;
-}
-
-#contact .contact_des {
-  padding-top: 3rem;
-  padding-right: 2rem;
-}
-
-#contact .contact_detail {
-  background: #ffffff;
-  padding: 5rem 5rem 12rem 5rem;
-}
-
-#contact .form-control {
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid #f0f0f0;
-  border-radius: 0px;
-  box-shadow: none;
-  margin-bottom: 16px;
-  transition: all 0.4s ease-in-out;
-}
-
-#contact .form-control:focus {
-  border-bottom-color: #999;
-}
-
-#contact input {
-  height: 45px;
-}
-
-#contact input[type="submit"] {
-  background: #222;
-  border-radius: 100px;
-  border: none;
-  color: #ffffff;
-  letter-spacing: 2px;
-  height: 50px;
-  margin-top: 12px;
-  transition: all 0.4s ease-in-out;
-}
-
-#contact input[type="submit"]:hover {
-  background: #f2545f;
 }
 
 
@@ -685,7 +392,7 @@ footer {
 	line-height: 20px;
   }
 
-  #intro { height: 65vh; }
+  #formularios { height: 65vh; }
 
   #video iframe {
     margin-top: 42px;
@@ -730,7 +437,7 @@ footer {
 
 @media (max-width: 760px) {
 
-  #intro {
+  #formularios {
     height: 100vh;
   }
 
