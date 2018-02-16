@@ -20,7 +20,6 @@ http://www.templatemo.com/tm-486-new-event
 
 <script defer src="/__/firebase/4.9.1/firebase-app.js"></script>
 	<!-- include only the Firebase features as you need -->
-	<script defer src="/__/firebase/4.9.1/firebase-auth.js"></script>
 	<script defer src="/__/firebase/4.9.1/firebase-database.js"></script>
 	<script defer src="/__/firebase/4.9.1/firebase-storage.js"></script>
 	<!-- initialize the SDK after all desired features are loaded -->
@@ -52,7 +51,14 @@ http://www.templatemo.com/tm-486-new-event
 		<div class="collapse navbar-collapse">
 
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#alumnado" class="smoothScroll">Alumnado</a></li>
+				<li><a href="alumnado.html" class="smoothScroll">
+					<div class="dropdown">
+						<span>Alumnado</span>
+						<div class="dropdown-content">
+							<p>Añadir nuevo estudiante</p>
+							<p>Mostrar Estudiantes</p>
+						</div>
+					</div></a></li>
 				<li><a href="empresas.html" class="smoothScroll">Empresas</a></li>
 				<li><a href="formularios.html" class="smoothScroll">Formularios</a></li>
 			</ul>
@@ -65,8 +71,7 @@ http://www.templatemo.com/tm-486-new-event
 <!-- =========================
     INTRO SECTION
 ============================== -->
-<section id="alumnado">
-    <h1></h1>
+<section id="alumnado"class="parallax-section">
 
 </section>
 
@@ -111,6 +116,14 @@ http://www.templatemo.com/tm-486-new-event
 <script src="js/smoothscroll.js"></script>
 <script src="js/wow.min.js"></script>
 <script src="js/custom.js"></script>
+<script src="getData">
+var database = firebase.database();
+firebase.database().ref('https://empresasypracticas.firebaseio.com/').on('value', snapshot => { });
+var starCountRef = firebase.database().ref('posts/' + postId + '/starCount');
+starCountRef.on('value', function(snapshot) {
+  updateStarCount(postElement, snapshot.val());
+});
+</script>
 
 </body>
 </html>
