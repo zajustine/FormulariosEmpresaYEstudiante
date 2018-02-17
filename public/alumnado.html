@@ -25,8 +25,37 @@ http://www.templatemo.com/tm-486-new-event
 	<!-- initialize the SDK after all desired features are loaded -->
 	<script defer src="/__/firebase/init.js"></script>
 
+<script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
+<script>
+
+</script>
+
 <!-- Main css -->
 <link rel="stylesheet" href="css/style.css">
+<style>
+#tableStudents {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#tableStudents td, #tableStudents th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+#tableStudents tr:nth-child(even){background-color: #4A9AF1;}
+
+#tableStudents tr:hover {background-color: #ddd;}
+
+#tableStudents th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #66A8EF;
+	color: white;
+}
+</style>
 
 <!-- Google Font -->
 <link href='https://fonts.googleapis.com/css?family=Poppins:400,500,600' rel='stylesheet' type='text/css'>
@@ -58,11 +87,11 @@ http://www.templatemo.com/tm-486-new-event
 							<p>Añadir nuevo estudiante</p>
 							<p>Mostrar Estudiantes</p>
 						</div>
-					</div></a></li>
+					</div>
+				</a></li>
 				<li><a href="empresas.html" class="smoothScroll">Empresas</a></li>
 				<li><a href="formularios.html" class="smoothScroll">Formularios</a></li>
 			</ul>
-
 		</div>
 
 	</div>
@@ -73,6 +102,50 @@ http://www.templatemo.com/tm-486-new-event
 ============================== -->
 <section id="alumnado"class="parallax-section">
 
+	<div class="container">
+		<div class="row">
+			<table style="width:100%" id="tableStudents">
+			<tr>
+				<th>Nombre: </th>
+				<th>Apellido: </th>
+				<th>Curso: </th>
+				<th>Empresa: </th>
+				<th>Fecha inicio: </th>
+				<th>Fecha fin: </th>
+				<th>Apellido: </th>
+				<th>Tareas: </th>
+				<th>Email: </th>
+				<th>Telefono: </th>
+			</table>
+
+
+			<script>
+			// Initialize Firebase
+			  var config = {
+			    apiKey: "AIzaSyBPonpL--ZV2Tf0Tb5j2DzRgZgX13st540",
+			    authDomain: "empresasypracticas.firebaseapp.com",
+			    databaseURL: "https://empresasypracticas.firebaseio.com",
+			    projectId: "empresasypracticas",
+			    storageBucket: "empresasypracticas.appspot.com",
+			    messagingSenderId: "699325239796"
+			  };
+			  firebase.initializeApp(config);
+
+				var table = document.getElementById('tableStudents');
+				dbRefObject = firebase.database().ref().child('Estudiantes');
+				dbRefObject.on('value', snap => {
+				data = snap.val();
+				for(var r in data) {
+					var row = table.insertRow(-1);
+					for(var c in data[r]) {
+						cell = row.insertCell(-1);
+						cell.innerHTML = data[r][c];
+					}
+				}
+			});
+</script>
+  </div>
+ </div>
 </section>
 
 
@@ -116,14 +189,7 @@ http://www.templatemo.com/tm-486-new-event
 <script src="js/smoothscroll.js"></script>
 <script src="js/wow.min.js"></script>
 <script src="js/custom.js"></script>
-<script src="getData">
-var database = firebase.database();
-firebase.database().ref('https://empresasypracticas.firebaseio.com/').on('value', snapshot => { });
-var starCountRef = firebase.database().ref('posts/' + postId + '/starCount');
-starCountRef.on('value', function(snapshot) {
-  updateStarCount(postElement, snapshot.val());
-});
-</script>
+
 
 </body>
 </html>
