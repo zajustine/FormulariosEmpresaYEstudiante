@@ -5,7 +5,7 @@
 New Event
 http://www.templatemo.com/tm-486-new-event
 -->
-<title>ALUMNADO | Empresas y Practicas</title>
+<title>ALUMNADO | Formulario</title>
 <meta name="description" content="">
 <meta name="author" content="">
 <meta charset="UTF-8">
@@ -25,6 +25,15 @@ http://www.templatemo.com/tm-486-new-event
 	<script defer src="/__/firebase/4.9.1/firebase-storage.js"></script>
 	<!-- initialize the SDK after all desired features are loaded -->
 	<script defer src="/__/firebase/init.js"></script>
+
+<!-- redirect page -->
+	<script>
+	function redirect(url){
+
+			window.location = url;
+		}
+	}
+	</script>
 
 <!-- Main css -->
 <link rel="stylesheet" href="css/style.css">
@@ -54,21 +63,15 @@ http://www.templatemo.com/tm-486-new-event
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="alumnado.html" class="smoothScroll">Alumnado</a></li>
 				<li><a href="empresas.html" class="smoothScroll">Empresas</a></li>
-				<li><a href="formularios.html" class="smoothScroll">
-					<div class="dropdown">
-						<span>Formularios</span>
-						<div class="dropdown-content">
-							<p>EMPRESA</p>
-						</div>
-					</div>
-				</a></li>
-			</ul>
-
+			<li><a  class="smoothScroll">
+				<select name="menu" onChange="window.document.location.href=this.options[this.selectedIndex].value;" value="GO">
+			         <option disabled selected="">FORMULARIOS</option>
+			         <option value="formularioEmpresa.html">EMPRESA</option>
+			     </select>
 		</div>
 
 	</div>
 </div>
-
 
 <!-- =========================
     INTRO SECTION

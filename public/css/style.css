@@ -262,6 +262,8 @@ footer {
     display: block;
 }
 
+.show {display:block;}
+
 @media(min-width:768px) {
     .custom-navbar {
         padding: 20px 0;

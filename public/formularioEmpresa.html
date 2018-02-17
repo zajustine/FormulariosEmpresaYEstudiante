@@ -5,7 +5,7 @@
 New Event
 http://www.templatemo.com/tm-486-new-event
 -->
-<title>EMPRESA | Empresas </title>
+<title>EMPRESA | Formulario </title>
 <meta name="description" content="">
 <meta name="author" content="">
 <meta charset="UTF-8">
@@ -54,13 +54,11 @@ http://www.templatemo.com/tm-486-new-event
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="alumnado.html" class="smoothScroll">Alumnado</a></li>
 				<li><a href="empresas.html" class="smoothScroll">Empresas</a></li>
-				<li><a href="formularios.html" class="smoothScroll">
-					<div class="dropdown">
-						<span>Formularios</span>
-						<div class="dropdown-content">
-							<p>ALUMNO</p>
-						</div>
-					</div>
+				<li><a  class="smoothScroll">
+					<select name="menu" onChange="window.document.location.href=this.options[this.selectedIndex].value;" value="GO">
+				         <option disabled selected="">FORMULARIOS</option>
+				         <option value="formularioEstudiante.html">ALUMNO</option>
+				     </select>
 				</a></li>
 			</ul>
 
@@ -68,6 +66,8 @@ http://www.templatemo.com/tm-486-new-event
 
 	</div>
 </div>
+
+
 
 
 <!-- =========================
