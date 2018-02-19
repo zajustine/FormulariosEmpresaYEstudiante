@@ -17,18 +17,18 @@ http://www.templatemo.com/tm-486-new-event
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet" href="css/owl.theme.css">
 <link rel="stylesheet" href="css/owl.carousel.css">
-
+<!--
 <script defer src="/__/firebase/4.9.1/firebase-app.js"></script>
-	<!-- include only the Firebase features as you need -->
+	 include only the Firebase features as you need
 	<script defer src="/__/firebase/4.9.1/firebase-database.js"></script>
 	<script defer src="/__/firebase/4.9.1/firebase-storage.js"></script>
-	<!-- initialize the SDK after all desired features are loaded -->
-	<script defer src="/__/firebase/init.js"></script>
+	 initialize the SDK after all desired features are loaded
+	 <script defer src="/__/firebase/4.9.1/firebase-database.js"></script>
+	<script defer src="/__/firebase/init.js"></script>-->
 
 <script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
-<script>
 
-</script>
+
 
 <!-- Main css -->
 <link rel="stylesheet" href="css/style.css">
@@ -106,16 +106,16 @@ http://www.templatemo.com/tm-486-new-event
 		<div class="row">
 			<table style="width:100%" id="tableStudents">
 			<tr>
-				<th>Nombre: </th>
-				<th>Apellido: </th>
-				<th>Curso: </th>
-				<th>Empresa: </th>
-				<th>Fecha inicio: </th>
-				<th>Fecha fin: </th>
-				<th>Apellido: </th>
-				<th>Tareas: </th>
-				<th>Email: </th>
-				<th>Telefono: </th>
+				<th>Nombre</th>
+				<th>Apellido</th>
+				<th>Curso</th>
+				<th>Empresa</th>
+				<th>Fecha inicio</th>
+				<th>Fecha fin</th>
+				<th>Tareas</th>
+				<th>Email</th>
+				<th>Telefono</th>
+				<th>Tipo Curso</th>
 			</table>
 
 
@@ -133,16 +133,29 @@ http://www.templatemo.com/tm-486-new-event
 
 				var table = document.getElementById('tableStudents');
 				dbRefObject = firebase.database().ref().child('Estudiantes');
-				dbRefObject.on('value', snap => {
+				var content = '';
+		    dbRefObject.on('value', snap => {
 				data = snap.val();
 				for(var r in data) {
+					var estudiante = new Array();
 					var row = table.insertRow(-1);
-					for(var c in data[r]) {
+					estudiante[0] = data[r].nom;
+					estudiante[1] = data[r].cognom;
+					estudiante[3]  = data[r].empresa;
+					estudiante[2] = data[r].curso;
+					estudiante[4] = data[r].inicio_practicas;
+					estudiante[5] = data[r].fin_practicas;
+					estudiante[6] = data[r].tareas;
+					estudiante[7] = data[r].correo;
+					estudiante[8] = data[r].telefono;
+					estudiante[9] = data[r].tipo_practicas;
+					for(var c in estudiante) {
 						cell = row.insertCell(-1);
-						cell.innerHTML = data[r][c];
+						cell.innerHTML = estudiante[c];
 					}
 				}
 			});
+
 </script>
   </div>
  </div>
