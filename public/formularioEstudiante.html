@@ -25,15 +25,8 @@ http://www.templatemo.com/tm-486-new-event
 	<script defer src="/__/firebase/4.9.1/firebase-storage.js"></script>
 	<!-- initialize the SDK after all desired features are loaded -->
 	<script defer src="/__/firebase/init.js"></script>
+	<script type="text/javascript" src="js/enquestaStudent.js"></script>
 
-<!-- redirect page -->
-	<script>
-	function redirect(url){
-
-			window.location = url;
-		}
-	}
-	</script>
 
 <!-- Main css -->
 <link rel="stylesheet" href="css/style.css">
@@ -112,70 +105,68 @@ http://www.templatemo.com/tm-486-new-event
 
 															<h4 style="border-top:5px solid white; border-bottom: 5px solid white;">A) GENERAL</h4>
 															<label>1. Cicle:</label>
-															<label >GM<input type="radio"/></label>
-															<label >GS<input type="radio"/></label>
-															<label >Especialitat<input type="text"/></label>
+															<label class="">GM<input type="radio" id="gm" value="gm"/></span></label>
+															<label class="">GS<input type="radio" id="gs" value="gs"/></label>
+															<label >Especialitat<input type="text" id="especialitat"/></label>
 
 															<br/><br/>
 
 															<label>2. Quina ha estat la font d'informació per realitzar les pràctiques a l'empresa?</label>
-															<input type="radio"/><label >Proposta del Tutor</label>
-															<input type="radio"/><label>A través del contactes personals></label>
+															<input type="radio" id="tutor" value="tutor"/><label >Proposta del Tutor</label>
+															<input type="radio" id="others" value="other"/><label>A través del contactes personals></label>
 
 															<br/><br/>
 															<h4 style="border-top:5px solid white; border-bottom: 5px solid white;">B) RELACIONS AMB EL TUTOR DE L’ESCOLA</h4>
 															<label>3. La informació facilitada pel tutor del cicle la consideres:</label>
-															<input type="radio"/><label>Gens bona</label>
-															<input type="radio"/><label>Poc bona</label>
-															<input type="radio"/><label>Bona</label>
-															<input type="radio"/><label>Molt bona</label>
+															<input type="radio" id="b1" value="b3gensbona"/><label>Gens bona</label>
+															<input type="radio" id="b2" value="b3pocbona"/><label>Poc bona</label>
+															<input type="radio" id="b3" value="b3bona"/><label>Bona</label>
+															<input type="radio" id="b4" value="b3moltbona"/><label>Molt bona</label>
 
 															<br/><br/>
 															<label>4. La formalització del conveni (des de la primera informació fins l’inici de les pràctiques) ha estat?</label>
-															<input type="radio"/><label>Molt complicat</label>
-															<input type="radio"/><label>Complicata</label>
-															<input type="radio"/><label>Fàcil</label>
-															<input type="radio"/><label>Molt fàcil</label>
+															<input type="radio" id="b41" value="b4moltC"/><label>Molt complicat</label>
+															<input type="radio" id="b42" value="b4complicat"/><label>Complicat</label>
+															<input type="radio" id="b43" value="b4facil"/><label>Fàcil</label>
+															<input type="radio" id="b44" value="b4moltfacil"/><label>Molt fàcil</label>
 															<br/><br/>
 															<label>5. El seguiment i orientació de les pràctiques per part del tutor del cicle ha estat?</label>
-															<input type="radio"/><label>Gens bo</label>
-															<input type="radio"/><label>Poc bo</label>
-															<input type="radio"/><label>Bo</label>
-															<input type="radio"/><label>Molt bo</label>
+															<input type="radio" id="b51" value="b5gensb"/><label>Gens bo</label>
+															<input type="radio" id="b52" value="b5pocbo"/><label>Poc bo</label>
+															<input type="radio" id="b53" value="b5bo"/><label>Bo</label>
+															<input type="radio" id="b54" value="b5moltbo"/><label>Molt bo</label>
 															<br/><br/>
 															<h4 style="border-top:5px solid white; border-bottom: 5px solid white;">C) RELACIONS AMB EL TUTOR DE L’EMPRESA</h4>
 															<label>6. El seguiment i orientació de les pràctiques per part del tutor de l’empresa ha estat?</label>
-															<input type="radio"/><label>Gens bo</label>
-															<input type="radio"/><label>Poc bo</label>
-															<input type="radio"/><label>Bo</label>
-															<input type="radio"/><label>Molt bo</label>
+															<input type="radio" id="c61" value="c6gensbo"/><label>Gens bo</label>
+															<input type="radio" id="c62" value="c6pocbo"/><label>Poc bo</label>
+															<input type="radio" id="c63" value="c6bo"/><label>Bo</label>
+															<input type="radio" id="b64" value="c6moltbo"/><label>Molt bo</label>
 															<br/><br/>
 															<label>		7. La teva estada a l’empresa ha estat?</label>
-															<input type="radio"/><label>Gens bona</label>
-															<input type="radio"/><label>Poc bona</label>
-															<input type="radio"/><label>Bona</label>
-															<input type="radio"/><label>Molt bona</label>
+															<input type="radio" id="c71" value="c7gensbo"/><label>Gens bona</label>
+															<input type="radio" id="c72" value="c7pocbona"/><label>Poc bona</label>
+															<input type="radio" id="c73" value="c7bona"/><label>Bona</label>
+															<input type="radio" id="c74" value="c7moltbona"/><label>Molt bona</label>
 															<br/><br/>
 															<label>8. La teva formació i experiència laboral consideres que ha millorat després d’haver realitzar les pràctiques a l’empresa?</label><br/>
-															<input type="radio"/><label>Molt poca</label>
-															<input type="radio"/><label>Poca millora</label>
-															<input type="radio"/><label>Alguna millora</label>
-															<input type="radio"/><label>Molta millora</label>
+															<input type="radio" id="c81" value="c8moltpoca"/><label>Molt poca</label>
+															<input type="radio" id="c82" value="c8pocamillora"/><label>Poca millora</label>
+															<input type="radio" id="c83" value="c8algunamillora"/><label>Alguna millora</label>
+															<input type="radio" id="c84" value="c8moltamillora"/><label>Molta millora</label>
 															<br/><br/>
 															<p style="border-top:5px solid white;"></p>
 															<label>La teva opinió és molt valuosa. Opina si ho creus oportú sobre aspectes a millorar referent a l’FCT (pràctiques a l’empresa)</label><br/>
-															<textarea rows="4" cols="50"></textarea>
+															<textarea rows="4" cols="50" id="opinion" value="opinion"></textarea>
 															<br/><br/>
 															<b><i style="color:black;">Moltes gràcies per la teva col·laboració!</i></p>
 															<br/>
-															<button type="button">Submit</button>
+															<button type="button" onclick="myFunction();" id="submit">Submit</button>
 															<br/><br/>
 
 						</form>
 						</div>
 					</div>
-
-
 
 		</div>
 	</div>
