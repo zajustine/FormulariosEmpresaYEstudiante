@@ -11,6 +11,7 @@ body {
     font-family: 'Poppins', sans-serif;
     font-style: normal;
 		font-weight: 400;
+
 }
 
 
@@ -190,6 +191,54 @@ footer {
 
 
 /*---------------------------------------
+Enquestes section
+-----------------------------------------*/
+#enquestes label{
+	color:black;
+	border: 1px white;
+	border-collapse: collapse;
+}
+
+#enquestes{
+	    background: url('../images/enquestes.jpg') ;
+}
+
+#enquestes h4{
+	   color:#2b2b58;
+}
+
+#menu a
+{
+	color: gray;
+}
+
+
+#enquestes th{
+	color:black;
+}
+
+#enquestes label{
+margin-left: 10px; }
+#enquestes p{
+	margin: 10px;
+	color:dark-gray;
+}
+#required p{
+	color: red;
+}
+
+#enquestes input{
+justify-content: space-between;
+margin-bottom:10px;
+margin-left: 10px;
+margin-top: 10px;
+margin-top: 10px;
+}
+
+
+
+
+/*---------------------------------------
     Navigation Links section
 -----------------------------------------*/
 .custom-navbar {
@@ -283,7 +332,7 @@ footer {
     formularios section
 -----------------------------------------*/
 #formularios {
-    background: url('../images/blue.jpg') 50% 0 repeat-y fixed;
+    background: url('../images/blue.jpg') ;
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center center;
@@ -310,7 +359,7 @@ footer {
     Alumnado section
 -----------------------------------------*/
 #alumnado {
-    background: url('../images/blue.jpg') 50% 0 repeat-y fixed;
+    background: url('../images/blue.jpg');
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center center;
@@ -338,7 +387,7 @@ footer {
     Empresa section
 -----------------------------------------*/
 #empresas {
-    background: url('../images/blue.jpg') 50% 0 repeat-y fixed;
+    background: url('../images/blue.jpg');
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center center;

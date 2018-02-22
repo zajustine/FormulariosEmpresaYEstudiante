@@ -42,7 +42,7 @@ http://www.templatemo.com/tm-486-new-event
 <link href='https://fonts.googleapis.com/css?family=Poppins:400,500,600' rel='stylesheet' type='text/css'>
 
 </head>
-<body data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
+<body overflow-y="auto" data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
 
 <!-- =========================
      NAVIGATION LINKS
@@ -54,35 +54,127 @@ http://www.templatemo.com/tm-486-new-event
 		<div class="navbar-header">
 			<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 				<span class="icon icon-bar"></span>
+				<span class="icon icon-bar"></span>
+				<span class="icon icon-bar"></span>
 			</button>
-			<a href="#" class="navbar-brand">Formulario | Alumnado </a>
+			<a class="navbar-brand">Formulario | Alumnado </a>
 		</div>
 
 		<div class="collapse navbar-collapse">
-
-			<ul class="nav navbar-nav navbar-right">
+			<div id="menu">
+				<ul class="nav navbar-nav navbar-right">
 				<li><a href="alumnado.html" class="smoothScroll">Alumnado</a></li>
 				<li><a href="empresas.html" class="smoothScroll">Empresas</a></li>
-			<li><a  class="smoothScroll">
+				<li><a  class="smoothScroll">
 				<select name="menu" onChange="window.document.location.href=this.options[this.selectedIndex].value;" value="GO">
-			         <option disabled selected="">FORMULARIOS</option>
-			         <option value="formularioEmpresa.html">EMPRESA</option>
-			     </select>
+							 <option disabled selected="">FORMULARIOS</option>
+							 <option value="formularioEmpresa.html">EMPRESA</option>
+					 </select>
+			</div>
+
 		</div>
+
+<br/>
+
 
 	</div>
 </div>
-
 <!-- =========================
     INTRO SECTION
 ============================== -->
-<section id="formularios" class="parallax-section">
+<section id="enquestes" class="parallax-section">
 	<div class="container">
 		<div class="row">
 
 			<div class="col-md-12 col-sm-12">
 
 			</div>
+
+<br/><br/><br/><br/><br/><br/>
+					<div>
+						<label class="enquestes">ENQUESTA SATISFACCIÓ ALUMNES</label><br/>
+						<div ><br/>
+							<p style="color:black;">
+								Enquesta dirigida a l’alumnat per valorar el grau de satisfacció del crèdit de Formació en Centres de Treball (FCT)
+			Per contestar aquesta enquesta només es pot marcar una sola casella per pregunta.
+
+							</p>
+								<form>
+										<label>DNI/NIF:</label><input type="text" id="dni"  />
+										<br/>
+										<label>Nom:</label><input type="text" id="nom"  />
+										<label>Cognoms:</label><input type="text" id="cognoms"  />
+									<br/>
+									<label>Email:</label><input type="email" id="email"  />
+									<label>Número de contacte:</label><input type="text" id="contactNumber"  />
+									<br/><br/>
+
+
+															<h4 style="border-top:5px solid white; border-bottom: 5px solid white;">A) GENERAL</h4>
+															<label>1. Cicle:</label>
+															<label >GM<input type="radio"/></label>
+															<label >GS<input type="radio"/></label>
+															<label >Especialitat<input type="text"/></label>
+
+															<br/><br/>
+
+															<label>2. Quina ha estat la font d'informació per realitzar les pràctiques a l'empresa?</label>
+															<input type="radio"/><label >Proposta del Tutor</label>
+															<input type="radio"/><label>A través del contactes personals></label>
+
+															<br/><br/>
+															<h4 style="border-top:5px solid white; border-bottom: 5px solid white;">B) RELACIONS AMB EL TUTOR DE L’ESCOLA</h4>
+															<label>3. La informació facilitada pel tutor del cicle la consideres:</label>
+															<input type="radio"/><label>Gens bona</label>
+															<input type="radio"/><label>Poc bona</label>
+															<input type="radio"/><label>Bona</label>
+															<input type="radio"/><label>Molt bona</label>
+
+															<br/><br/>
+															<label>4. La formalització del conveni (des de la primera informació fins l’inici de les pràctiques) ha estat?</label>
+															<input type="radio"/><label>Molt complicat</label>
+															<input type="radio"/><label>Complicata</label>
+															<input type="radio"/><label>Fàcil</label>
+															<input type="radio"/><label>Molt fàcil</label>
+															<br/><br/>
+															<label>5. El seguiment i orientació de les pràctiques per part del tutor del cicle ha estat?</label>
+															<input type="radio"/><label>Gens bo</label>
+															<input type="radio"/><label>Poc bo</label>
+															<input type="radio"/><label>Bo</label>
+															<input type="radio"/><label>Molt bo</label>
+															<br/><br/>
+															<h4 style="border-top:5px solid white; border-bottom: 5px solid white;">C) RELACIONS AMB EL TUTOR DE L’EMPRESA</h4>
+															<label>6. El seguiment i orientació de les pràctiques per part del tutor de l’empresa ha estat?</label>
+															<input type="radio"/><label>Gens bo</label>
+															<input type="radio"/><label>Poc bo</label>
+															<input type="radio"/><label>Bo</label>
+															<input type="radio"/><label>Molt bo</label>
+															<br/><br/>
+															<label>		7. La teva estada a l’empresa ha estat?</label>
+															<input type="radio"/><label>Gens bona</label>
+															<input type="radio"/><label>Poc bona</label>
+															<input type="radio"/><label>Bona</label>
+															<input type="radio"/><label>Molt bona</label>
+															<br/><br/>
+															<label>8. La teva formació i experiència laboral consideres que ha millorat després d’haver realitzar les pràctiques a l’empresa?</label><br/>
+															<input type="radio"/><label>Molt poca</label>
+															<input type="radio"/><label>Poca millora</label>
+															<input type="radio"/><label>Alguna millora</label>
+															<input type="radio"/><label>Molta millora</label>
+															<br/><br/>
+															<p style="border-top:5px solid white;"></p>
+															<label>La teva opinió és molt valuosa. Opina si ho creus oportú sobre aspectes a millorar referent a l’FCT (pràctiques a l’empresa)</label><br/>
+															<textarea rows="4" cols="50"></textarea>
+															<br/><br/>
+															<b><i style="color:black;">Moltes gràcies per la teva col·laboració!</i></p>
+															<br/>
+															<button type="button">Submit</button>
+															<br/><br/>
+
+						</form>
+						</div>
+					</div>
+
 
 
 		</div>
