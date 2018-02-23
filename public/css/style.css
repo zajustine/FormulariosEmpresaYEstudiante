@@ -200,7 +200,7 @@ Enquestes section
 }
 
 #enquestes{
-	    background: url('../images/enquestes.jpg') ;
+	    background: url('../images/blue.jpg') ;
 
 }
 	/* Create a custom radio button */
@@ -265,10 +265,6 @@ Enquestes section
 	   color:#2b2b58;
 }
 
-#menu a
-{
-	color: gray;
-}
 
 
 #enquestes th{
