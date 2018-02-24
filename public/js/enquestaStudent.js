@@ -18,7 +18,7 @@ var contactNumber;
   firebase.initializeApp(config);
 var ref = new Firebase("https://empresasypracticas.firebaseio.com/");
 
-function writeStudentData(dni, nom, cognoms, email, contactNumber)
+function writeStudentData()
 {
 
   var studentData = ref.child('Formulario/Estudiante');
@@ -29,25 +29,16 @@ function writeStudentData(dni, nom, cognoms, email, contactNumber)
   email=document.getElementById("email").value;
   contactNumber=document.getElementById("contactNumber").value;
 
-  var res;//CICLE
+  var cicle;//CICLE
+  var q2;//item NUMBER 2
+  var q3; //ITEM NUMBER 3
+  var q4; //ITEM NUMBER 4!!!!!
+  var q5; //ITEM NUMBER 5!!!!!!!!
+  var q6; //ITEM NUMBER 6!!!!
+  var q7; //ITEM number 7!
+  var q8; //item number 8!!!
+  var opinion;
 
-if(document.getElementById('gm').checked)
-{
-    document.getElementById("gs").disabled=true;
-    document.getElementById("especialitat").disabled=true;
-    res="Grau Mitja";
-  }else if(document.getElementById('gs').checked) {
-    document.getElementById("gm").disabled=true;
-    document.getElementById("especialitat").disabled=true;
-    res="Grau Superior";
-  }
-  else {
-    document.getElementById("gm").disabled=true;
-    document.getElementById("gs").disabled=true;
-    res=document.getElementById('especialitat');
-  }
-
-  var q2;//CUESTION NUMBER 2
 
   if(document.getElementById('tutor').checked)
   {
@@ -59,7 +50,7 @@ if(document.getElementById('gm').checked)
   }
   else alert('Fill all fields.');
 
-  var q3; //ITEM NUMBER 3
+
   if(document.getElementById('b1').checked)
   {
     q3="Informació facilitada: Gens bona";
@@ -79,7 +70,6 @@ if(document.getElementById('gm').checked)
   else alert('Fill all fields.');
 
 
-  var q4; //ITEM NUMBER 4!!!!!
   if(document.getElementById('b41').checked)
   {
     q4="Formalització del conveni ha estat molt complicat";
@@ -98,7 +88,7 @@ if(document.getElementById('gm').checked)
   }
   else alert('Fill all fields.');
 
-  var q5; //ITEM NUMBER 5!!!!!!!!
+
   if(document.getElementById('b51').checked)
   {
     q5="El seguiment i orientació del tutor del cicle ha estat gens bo";
@@ -117,7 +107,7 @@ if(document.getElementById('gm').checked)
   }
   else alert ('Fill all fields.');
 
-  var q6; //ITEM NUMBER 6!!!!
+
   if(document.getElementById('c61').checked)
   {
     q6="El seguiment i orientació del tutor de l'empresa ha estat gens bo";
@@ -136,7 +126,7 @@ if(document.getElementById('gm').checked)
   }
   else alert('Fill all fields.');
 
-  var q7; //ITEM/questio number 7!
+
   if(document.getElementById('c71').checked)
   {
     q7="La meva estada ha estat gens bona";
@@ -155,7 +145,7 @@ if(document.getElementById('gm').checked)
   }
   else alert ('Fill all fields.');
 
-  var q8; //item number 8!!!
+
   if(document.getElementById('c81').checked)
   {
     q8="Considero que la meva formació i experiència laboral ha millorat molt poca";
@@ -175,7 +165,7 @@ if(document.getElementById('gm').checked)
   else alert('Fill all fields.');
 
 
-  var opinion;
+
   if(document.getElementById('opinion').value=='')
   {
     alert('Fill all fields.');
@@ -191,7 +181,7 @@ if(document.getElementById('gm').checked)
    cognoms:cognoms,
    email:email,
    contactNumber:contactNumber,
-   cicle:res,
+   cicle:getCicle(),
    item2:q2,
    item3:q3,
    item4:q4,
@@ -204,4 +194,27 @@ if(document.getElementById('gm').checked)
 
 
 alert('Submission successful!');
+}
+
+function getCicle()
+{
+
+  if(document.getElementById('gm').checked)
+  {
+
+      document.getElementById("gs").disabled=true;
+      document.getElementById("especialitat").disabled=true;
+      cicle="Grau Mitja";
+    }else if(document.getElementById('gs').checked) {
+      document.getElementById("gm").disabled=true;
+      document.getElementById("especialitat").disabled=true;
+      cicle="Grau Superior";
+    }
+    else if(document.getElementById('especialitat').value!='') {
+      document.getElementById("gm").disabled=true;
+      document.getElementById("gs").disabled=true;
+      cicle=document.getElementById('especialitat');
+    }
+
+    return cicle;
 }
