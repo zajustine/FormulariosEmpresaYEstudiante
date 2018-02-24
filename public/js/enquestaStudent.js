@@ -1,5 +1,5 @@
 var dni;
-var  nom;
+var nom;
 var cognoms;
 var email;
 var contactNumber;
@@ -49,30 +49,66 @@ var c84;
 
 var opinion;
 
-function myFunction()
+
+  // Initialize Firebase
+
+  var config = {
+		apiKey: "AIzaSyBPonpL--ZV2Tf0Tb5j2DzRgZgX13st540",
+		authDomain: "empresasypracticas.firebaseapp.com",
+		databaseURL: "https://empresasypracticas.firebaseio.com",
+		projectId: "empresasypracticas",
+		storageBucket: "empresasypracticas.appspot.com",
+		messagingSenderId: "699325239796"
+  };
+  firebase.initializeApp(config);
+var ref = new Firebase("https://empresasypracticas.firebaseio.com/");
+
+function writeStudentData(dni, nom, cognoms, email, contactNumber)
 {
 
-    dni = document.getElementById("dni").value;
-    nom = document.getElementById("nom").value;
-    cognoms =document.getElementById("cognoms").value;
-    email=document.getElementById("email").value;
-    contactNumber=document.getElementById("contactNumber").value;
-    gm=document.getElementById("gm").value;
+  var studentData = ref.child('FormularioEstudiante');
 
-    var graumitja = checkCicle(gm);
+  dni = document.getElementById("dni").value;
+  nom = document.getElementById("nom").value;
+  cognoms =document.getElementById("cognoms").value;
+  email=document.getElementById("email").value;
+  contactNumber=document.getElementById("contactNumber").value;
 
-    alert(dni+nom+cognoms+email+contactNumber);
+
+//var enquestaStudentID = studentData.push();
+
+  studentData.child(dni).set({
+   nom:nom,
+   cognoms:cognoms,
+   email:email,
+   contactNumber:contactNumber
+ });
+
+  var res;
+    /*
+  if(x=="gm")
+  res="Grau Mitja";*/
+
+  /*if(document.getElementById('gm').checked) {
+    document.getElementById("gs").disabled=true;
+    document.getElementById("especialitat").disabled=true;
+    res="Grau Mitja";
+  }else if(document.getElementById('gs').checked) {
+    document.getElementById("gm").disabled=true;
+    document.getElementById("especialitat").disabled=true;
+    res="Grau Superior";
+  }
+  else {
+    document.getElementById("gm").disabled=true;
+    document.getElementById("gs").disabled=true;
+    res=specialty;
+  }*/
+
 }
 
-function checkCicle(x)
-{
-  var graumitja = document.getElementById("gm").value;
-  var grausuperior = document.getElementById("gs").value;
-  var specialty = document.getElementById("especialitat").value;
 
-  var res = x;
-if(x=="gm")
-res="Grau Mitja";
+function checkCicle()
+{
 
   document.open();
   document.write(res);
