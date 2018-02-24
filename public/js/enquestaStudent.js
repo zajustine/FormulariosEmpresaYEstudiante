@@ -4,51 +4,6 @@ var cognoms;
 var email;
 var contactNumber;
 
-var gm;
-var gs;
-var especialitat;
-
-var tutor;
-var others;
-
-/*B cuestion #3 1st to 4th radio button*/
-var b1;
-var b2;
-var b3;
-var b4;
-
-/*B cuestion #4 1st to 4th radio button*/
-var b41;
-var b42;
-var b43;
-var b44;
-
-/*B cuestion #5 1st to 4th radio button*/
-var b51;
-var b52;
-var b53;
-var b54;
-
-/*C cuestion #6 1st to 4th radio button*/
-var c61;
-var c62;
-var c63;
-var c64;
-
-/*C cuestion #7 1st to 4th radio button*/
-var c71;
-var c72;
-var c73;
-var c74;
-
-/*C cuestion #8 1st to 4th radio button*/
-var c81;
-var c82;
-var c83;
-var c84;
-
-var opinion;
-
 
   // Initialize Firebase
 
@@ -74,22 +29,10 @@ function writeStudentData(dni, nom, cognoms, email, contactNumber)
   email=document.getElementById("email").value;
   contactNumber=document.getElementById("contactNumber").value;
 
+  var res;//CICLE
 
-//var enquestaStudentID = studentData.push();
-
-  studentData.child(dni).set({
-   nom:nom,
-   cognoms:cognoms,
-   email:email,
-   contactNumber:contactNumber
- });
-
-  var res;
-    /*
-  if(x=="gm")
-  res="Grau Mitja";*/
-
-  /*if(document.getElementById('gm').checked) {
+if(document.getElementById('gm').checked)
+{
     document.getElementById("gs").disabled=true;
     document.getElementById("especialitat").disabled=true;
     res="Grau Mitja";
@@ -101,18 +44,164 @@ function writeStudentData(dni, nom, cognoms, email, contactNumber)
   else {
     document.getElementById("gm").disabled=true;
     document.getElementById("gs").disabled=true;
-    res=specialty;
-  }*/
+    res=document.getElementById('especialitat');
+  }
 
-}
+  var q2;//CUESTION NUMBER 2
+
+  if(document.getElementById('tutor').checked)
+  {
+    q2="Font d'informació: Proposta del tutor";
+  }
+  else if(document.getElementById('others').checked)
+  {
+    q2="Font d'informació:  A través de contactes personals";
+  }
+  else alert('Fill all fields.');
+
+  var q3; //ITEM NUMBER 3
+  if(document.getElementById('b1').checked)
+  {
+    q3="Informació facilitada: Gens bona";
+  }
+  else if(document.getElementById('b2').checked)
+  {
+    q3="Informació facilitada: Poca bona";
+  }
+  else if(document.getElementById('b3').checked)
+  {
+    q3="Informació facilitada: Bona";
+  }
+  else if(document.getElementById('b4').checked)
+  {
+    q3="Informació facilitada: Molt bona";
+  }
+  else alert('Fill all fields.');
 
 
-function checkCicle()
-{
+  var q4; //ITEM NUMBER 4!!!!!
+  if(document.getElementById('b41').checked)
+  {
+    q4="Formalització del conveni ha estat molt complicat";
+  }
+  else if(document.getElementById('b42').checked)
+  {
+    q4="Formalització del conveni ha estat complicat";
+  }
+  else if(document.getElementById('b43').checked)
+  {
+    q4="Formalització del conveni ha estat fàcil";
+  }
+  else if(document.getElementById('b44').checked)
+  {
+    q4="Formalització del conveni ha estat molt fàcil";
+  }
+  else alert('Fill all fields.');
 
-  document.open();
-  document.write(res);
-  document.close();
+  var q5; //ITEM NUMBER 5!!!!!!!!
+  if(document.getElementById('b51').checked)
+  {
+    q5="El seguiment i orientació del tutor del cicle ha estat gens bo";
+  }
+  else if(document.getElementById('b52').checked)
+  {
+    q5="El seguiment i orientació del tutor del cicle ha estat poc bo";
+  }
+  else if(document.getElementById('b53').checked)
+  {
+    q5="El seguiment i orientació del tutor del cicle ha estat bo";
+  }
+  else if(document.getElementById('b54').checked)
+  {
+    q5="El seguiment i orientació del tutor del cicle ha estat gens molt bo";
+  }
+  else alert ('Fill all fields.');
+
+  var q6; //ITEM NUMBER 6!!!!
+  if(document.getElementById('c61').checked)
+  {
+    q6="El seguiment i orientació del tutor de l'empresa ha estat gens bo";
+  }
+  else if(document.getElementById('c62').checked)
+  {
+    q6="El seguiment i orientació del tutor de l'empresa ha estat poc bo"
+  }
+  else if(document.getElementById('c63').checked)
+  {
+    q6="El seguiment i orientació del tutor de l'empresa ha estat bo";
+  }
+  else if(document.getElementById('c64').checked)
+  {
+    q6="El seguiment i orientació del tutor de l'empresa ha estat molt bo";
+  }
+  else alert('Fill all fields.');
+
+  var q7; //ITEM/questio number 7!
+  if(document.getElementById('c71').checked)
+  {
+    q7="La meva estada ha estat gens bona";
+  }
+  else if(document.getElementById('c72').checked)
+  {
+    q7="La meva estada ha estat poc bona"
+  }
+  else if(document.getElementById('c73').checked)
+  {
+    q7="La meva estada ha estat bona";
+  }
+  else if(document.getElementById('c74').checked)
+  {
+    q7="La meva estada ha estat molt bona";
+  }
+  else alert ('Fill all fields.');
+
+  var q8; //item number 8!!!
+  if(document.getElementById('c81').checked)
+  {
+    q8="Considero que la meva formació i experiència laboral ha millorat molt poca";
+  }
+  else if(document.getElementById('c82').checked)
+  {
+    q8="Considero que la meva formació i experiència laboral ha millorat poca";
+  }
+  else if(document.getElementById('c83').checked)
+  {
+    q8="Considero que la meva formació i experiència laboral tenen alguna millora";
+  }
+  else if(document.getElementById('c84').checked)
+  {
+    q8="Considero que la meva formació i experiència laboral ha millorat moltíssim";
+  }
+  else alert('Fill all fields.');
 
 
+  var opinion;
+  if(document.getElementById('opinion').value=='')
+  {
+    alert('Fill all fields.');
+  }
+  else {
+    opinion=document.getElementById('opinion').value;
+  }
+
+//var enquestaStudentID = studentData.push();
+
+  studentData.child(dni).set({
+   nom:nom,
+   cognoms:cognoms,
+   email:email,
+   contactNumber:contactNumber,
+   cicle:res,
+   item2:q2,
+   item3:q3,
+   item4:q4,
+   item5:q5,
+   item6:q6,
+   item7:q7,
+   item8:q8,
+   opinion:opinion
+ });
+
+
+alert('Submission successful!');
 }
