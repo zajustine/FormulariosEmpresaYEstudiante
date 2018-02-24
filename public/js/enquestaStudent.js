@@ -66,7 +66,7 @@ var ref = new Firebase("https://empresasypracticas.firebaseio.com/");
 function writeStudentData(dni, nom, cognoms, email, contactNumber)
 {
 
-  var studentData = ref.child('FormularioEstudiante');
+  var studentData = ref.child('Formulario/Estudiante');
 
   dni = document.getElementById("dni").value;
   nom = document.getElementById("nom").value;
