@@ -18,13 +18,7 @@ http://www.templatemo.com/tm-486-new-event
 <link rel="stylesheet" href="css/owl.theme.css">
 <link rel="stylesheet" href="css/owl.carousel.css">
 
-<script defer src="/__/firebase/4.9.1/firebase-app.js"></script>
-	<!-- include only the Firebase features as you need -->
-	<script defer src="/__/firebase/4.9.1/firebase-auth.js"></script>
-	<script defer src="/__/firebase/4.9.1/firebase-database.js"></script>
-	<script defer src="/__/firebase/4.9.1/firebase-storage.js"></script>
-	<!-- initialize the SDK after all desired features are loaded -->
-	<script defer src="/__/firebase/init.js"></script>
+
 
 	<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
 	<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
@@ -62,11 +56,7 @@ http://www.templatemo.com/tm-486-new-event
 				<ul class="nav navbar-nav navbar-right">
 				<li><a href="alumnado.html" class="smoothScroll">Alumnado</a></li>
 				<li><a href="empresas.html" class="smoothScroll">Empresas</a></li>
-				<li><a  class="smoothScroll">
-				<select name="menu" onChange="window.document.location.href=this.options[this.selectedIndex].value;" value="GO">
-							 <option disabled selected="">FORMULARIOS</option>
-							 <option value="formularioEmpresa.html">EMPRESA</option>
-					 </select>
+				<li><a href="formularios.html" class="smoothScroll">Formularios</a></li>
 			</div>
 
 		</div>
@@ -97,75 +87,66 @@ http://www.templatemo.com/tm-486-new-event
 
 							</p>
 								<form>
-										<label>DNI/NIF:</label><input type="text" id="dni"  />
+									<b style="color: black; background-color:white;">
+										ESTUDIANT
+									</b><br/>
+										<label>DNI/NIF:</label><input type="text" id="dniStudent"  />
 										<br/>
-										<label>Nom:</label><input type="text" id="nom"  />
-										<label>Cognoms:</label><input type="text" id="cognoms"  />
+										<label>Nom:</label><input type="text" id="snom"  />
+										<label>Cognoms:</label><input type="text" id="scognom"  />
 									<br/>
-									<label>Email:</label><input type="email" id="email"  />
-									<label>Número de contacte:</label><input type="text" id="contactNumber"  />
+									<label>Email:</label><input type="email" id="emailStudent"  />
+									<label>Número de contacte:</label><input type="text" id="telefono"  />
+									<label>Empresa: </label>
+									<select id="Empresadepracticas" name="menu">
+												 <option value="Accenture">Accenture</option>
+												 <option value="Apple">Apple</option>
+												 <option value="Everis">Everis</option>
+												 <option value="HP">HP</option>
+												 <option value="Google">Google</option>
+										 </select>
+										 <label>Tipus de pràctiques: </label>
+	 									<select id="TipoPracticas">
+	 												 <option value="DUAL">DUAL</option>
+	 												 <option value="FCT">FCT</option>
+	 										 </select>
 									<br/><br/>
 
 
-															<h4 style="border-top:5px solid white; border-bottom: 5px solid white; background-color:white;">A) GENERAL</h4>
-															<label>1. Cicle:</label>
-															<input type="radio" id="gm" value="gm"/><label>GM</label>
-															<input type="radio" id="gs" value="gs"/><label>GS</label>
-															<label >Especialitat<input type="text" id="especialitat"/></label>
+
+															<label>Cicle:</label>
+															<select id="cicle">
+						 												 <option value="GM">GM</option>
+						 												 <option value="GS">GS</option>
+						 										 </select>
+															<label>Curs<input type="text" id="curso" size="4"/></label>
+
+															<h4 style="border-top:5px solid white; border-bottom: 5px solid white; background-color:white;">ENQUESTA</h4>
+															<label style="color: black; padding: 2em;">1-10 (1 és el més baix, 10 és el més alt)</label><br/>
+															<label>1. La relació que has mantingut amb els companys de la feina ha estat satisfactoria?</label>
+															<input type="text" id="relacioncompaneros" size="1"/>
 
 															<br/><br/>
 
-															<label>2. Quina ha estat la font d'informació per realitzar les pràctiques a l'empresa?</label>
-															<input type="radio" id="tutor" value="tutor"/><label >Proposta del Tutor</label>
-															<input type="radio" id="others" value="other"/><label>A través del contactes personals</label>
+															<label>2. Com qualificaries la relació amb el tutor de treball?</label>
+															<input type="text" id="relaciontutorE" size="1" />
 
 															<br/><br/>
-															<h4 style="border-top:5px solid white; border-bottom: 5px solid white; background-color:white;">B) RELACIONS AMB EL TUTOR DE L’ESCOLA</h4>
-															<label>3. La informació facilitada pel tutor del cicle la consideres:</label>
-															<input type="radio" id="b1" value="b3gensbona"/><label>Gens bona</label>
-															<input type="radio" id="b2" value="b3pocbona"/><label>Poc bona</label>
-															<input type="radio" id="b3" value="b3bona"/><label>Bona</label>
-															<input type="radio" id="b4" value="b3moltbona"/><label>Molt bona</label>
+															<label>3. Valoració de l'aprenentatge a l'empresa</label>
+															<input type="text" id="aprendizaje" size="1"/>
+															<br/><br/>
+															<label>4. Treballaries amb aquesta empresa?</label>
+															<input type="text" id="Repetir" size="1"/>
+															<br/><br/>
 
-															<br/><br/>
-															<label>4. La formalització del conveni (des de la primera informació fins l’inici de les pràctiques) ha estat?</label>
-															<input type="radio" id="b41" value="b4moltC"/><label>Molt complicat</label>
-															<input type="radio" id="b42" value="b4complicat"/><label>Complicat</label>
-															<input type="radio" id="b43" value="b4facil"/><label>Fàcil</label>
-															<input type="radio" id="b44" value="b4moltfacil"/><label>Molt fàcil</label>
-															<br/><br/>
-															<label>5. El seguiment i orientació de les pràctiques per part del tutor del cicle ha estat?</label>
-															<input type="radio" id="b51" value="b5gensb"/><label>Gens bo</label>
-															<input type="radio" id="b52" value="b5pocbo"/><label>Poc bo</label>
-															<input type="radio" id="b53" value="b5bo"/><label>Bo</label>
-															<input type="radio" id="b54" value="b5moltbo"/><label>Molt bo</label>
-															<br/><br/>
-															<h4 style="border-top:5px solid white; border-bottom: 5px solid white; background-color:white;">C) RELACIONS AMB EL TUTOR DE L’EMPRESA</h4>
-															<label>6. El seguiment i orientació de les pràctiques per part del tutor de l’empresa ha estat?</label>
-															<input type="radio" id="c61" value="c6gensbo"/><label>Gens bo</label>
-															<input type="radio" id="c62" value="c6pocbo"/><label>Poc bo</label>
-															<input type="radio" id="c63" value="c6bo"/><label>Bo</label>
-															<input type="radio" id="c64" value="c6moltbo"/><label>Molt bo</label>
-															<br/><br/>
-															<label>		7. La teva estada a l’empresa ha estat?</label>
-															<input type="radio" id="c71" value="c7gensbo"/><label>Gens bona</label>
-															<input type="radio" id="c72" value="c7pocbona"/><label>Poc bona</label>
-															<input type="radio" id="c73" value="c7bona"/><label>Bona</label>
-															<input type="radio" id="c74" value="c7moltbona"/><label>Molt bona</label>
-															<br/><br/>
-															<label>8. La teva formació i experiència laboral consideres que ha millorat després d’haver realitzar les pràctiques a l’empresa?</label><br/>
-															<input type="radio" id="c81" value="c8moltpoca"/><label>Molt poca</label>
-															<input type="radio" id="c82" value="c8pocamillora"/><label>Poca millora</label>
-															<input type="radio" id="c83" value="c8algunamillora"/><label>Alguna millora</label>
-															<input type="radio" id="c84" value="c8moltamillora"/><label>Molta millora</label>
+															<label>5. Com qualificaria l'experiència global?</label>
+															<input type="text" id="ValoracionGlobalS" size="1"/>
 															<br/><br/>
 															<p style="border-top:5px solid white;"></p>
-															<label>La teva opinió és molt valuosa. Opina si ho creus oportú sobre aspectes a millorar referent a l’FCT (pràctiques a l’empresa)</label><br/>
-															<textarea rows="4" cols="50" id="opinion"></textarea>
-															<br/><br/>
-															<b><i style="color:black;">Moltes gràcies per la teva col·laboració!</i></p>
+															<label>La teva opinió és molt valuosa (comentaris addicionals).</label>
 															<br/>
-															<button type="button" onclick="writeStudentData();" id="submit">Submit</button>
+															<textarea rows="4" cols="50" id="Scomentarios"></textarea><br/>
+															<button type="button" onclick="writeStudentData();">Submit</button>
 															<br/><br/>
 
 						</form>

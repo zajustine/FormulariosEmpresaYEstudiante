@@ -18,13 +18,13 @@ http://www.templatemo.com/tm-486-new-event
 <link rel="stylesheet" href="css/owl.theme.css">
 <link rel="stylesheet" href="css/owl.carousel.css">
 
-<script defer src="/__/firebase/4.9.1/firebase-app.js"></script>
-	<!-- include only the Firebase features as you need -->
-	<script defer src="/__/firebase/4.9.1/firebase-auth.js"></script>
-	<script defer src="/__/firebase/4.9.1/firebase-database.js"></script>
-	<script defer src="/__/firebase/4.9.1/firebase-storage.js"></script>
-	<!-- initialize the SDK after all desired features are loaded -->
-	<script defer src="/__/firebase/init.js"></script>
+
+
+		<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+		<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+		 <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+		 <script type="text/javascript" src="js/enquestaEmpresa.js"></script>
+
 
 <!-- Main css -->
 <link rel="stylesheet" href="css/style.css">
@@ -45,6 +45,8 @@ http://www.templatemo.com/tm-486-new-event
 		<div class="navbar-header">
 			<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 				<span class="icon icon-bar"></span>
+				<span class="icon icon-bar"></span>
+				<span class="icon icon-bar"></span>
 			</button>
 			<a  class="navbar-brand">Formulario | Empresa </a>
 		</div>
@@ -54,12 +56,7 @@ http://www.templatemo.com/tm-486-new-event
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="alumnado.html" class="smoothScroll">Alumnado</a></li>
 				<li><a href="empresas.html" class="smoothScroll">Empresas</a></li>
-				<li><a  class="smoothScroll">
-					<select name="menu" onChange="window.document.location.href=this.options[this.selectedIndex].value;" value="GO">
-				         <option disabled selected="">FORMULARIOS</option>
-				         <option value="formularioEstudiante.html">ALUMNO</option>
-				     </select>
-				</a></li>
+				<li><a href="formularios.html" class="smoothScroll">Formularios</a></li>
 			</ul>
 
 		</div>
@@ -73,17 +70,88 @@ http://www.templatemo.com/tm-486-new-event
 <!-- =========================
     INTRO SECTION
 ============================== -->
-<section id="formularios" class="parallax-section">
+<section id="enquestes" class="parallax-section">
 	<div class="container">
 		<div class="row">
 
+			<div class="col-md-12 col-sm-12">
+
+			</div>
+
+<br/><br/><br/><br/><br/><br/>
+					<div>
+						<label class="enquestes">ENQUESTA SATISFACCIÓ EMPRESA</label><br/>
+						<div ><br/>
+							<p style="color:black;">
+								Enquesta dirigida a les empreses per mesurar el grau de satisfacció amb l'estudiant en practiques.
+							</p>
+								<form>
+									<b style="color:black; background-color:white;">
+										TUTOR DE L'EMPRESA
+									</b><br/>
+										<label>Nom:</label><input type="text" id="Tutornom"  />
+										<label>Cognoms:</label><input type="text" id="Tutorcognom"  />
+										<label>Empresa: </label><!--empresaA-->
+										<select id="EmpresaA" name="menu">
+													 <option value="Accenture">Accenture</option>
+													 <option value="Apple">Apple</option>
+													 <option value="Everis">Everis</option>
+													 <option value="HP">HP</option>
+													 <option value="Google">Google</option>
+											 </select>
+									<br/>
+									<label>Email:</label><input type="email" id="TutorEmail"  />
+									<label>Número de contacte:</label><input type="text" id="Tutornumero"  />
+									<br/><br/><br/>
+									<b style="color: black; background-color:white;">
+										ESTUDIANT
+									</b><br/>
+									<label>DNI/NIF:</label><input type="text" id="EstudentNIE"  />
+									<br/>
+									<label>Nom i cognoms:</label><input type="text" id="EstudentFullname"  />
+								<br/>
+								<label>Email:</label><input type="email" id="EstudenEmail"  />
 
 
+															<h4 style="border-top:5px solid white; border-bottom: 5px solid white; background-color:white;">ENQUESTA</h4>
+															<label style="color: black; padding: 2em;">1-10 (1 és el més baix, 10 és el més alt)</label><br/>
+															<label>1. Estàs satisfet amb la formació inicial de l'alumne/a?</label>
+															<input type="text" id="FormacionInicial" size="1"/>
+															<br/><br/>
+
+															<label>2. Com valoraríes globalment l'experiència de la FCT?</label>
+															<input type="text" id="RepitirColaboracion" size="1"/>
+
+															<br/><br/>
+															<label>3. Com qualificaria l'experiència global?</label>
+															<input type="text" id="ValoracionGlobal" size="1"/>
+
+															<br/><br/>
+															<label>4. Com valoraria l'estudiant?</label>
+															<input type="text" id="ValoracionEstudiante" size="1"/>
+
+															<br/><br/>
+															<label>5. Motiu del cap de pràctiques. (Acomiadament, finalització del conveni, altres)</label>
+															<input type="text" id="MotivoFin"/>
+
+															<br/><br/>
+
+															<p style="border-top:5px solid white;"></p>
+															<label>La teva opinió és molt valuosa (comentaris addicionals).</label><br/>
+															<textarea rows="4" cols="50" id="Comentarios"></textarea>
+															<br/><br/>
+															<b><i style="color:black;">Moltes gràcies per la teva col·laboració!</i></p>
+															<br/>
+															<button type="button" onclick="writeEmpresaData();" >Submit</button>
+															<br/><br/>
+
+						</form>
+						</div>
+					</div>
 
 		</div>
 	</div>
 </section>
-
 
 
 <!-- =========================

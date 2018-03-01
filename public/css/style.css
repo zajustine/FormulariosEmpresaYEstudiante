@@ -199,6 +199,10 @@ Enquestes section
 	border-collapse: collapse;
 }
 
+#enquestes option{
+	margin-left: 10px;
+}
+
 #enquestes{
 	    background: url('../images/blue.jpg') ;
 
