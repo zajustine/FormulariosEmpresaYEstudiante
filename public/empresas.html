@@ -18,13 +18,10 @@ http://www.templatemo.com/tm-486-new-event
 <link rel="stylesheet" href="css/owl.theme.css">
 <link rel="stylesheet" href="css/owl.carousel.css">
 
-<script defer src="/__/firebase/4.9.1/firebase-app.js"></script>
-	<!-- include only the Firebase features as you need -->
-	<script defer src="/__/firebase/4.9.1/firebase-auth.js"></script>
-	<script defer src="/__/firebase/4.9.1/firebase-database.js"></script>
-	<script defer src="/__/firebase/4.9.1/firebase-storage.js"></script>
-	<!-- initialize the SDK after all desired features are loaded -->
-	<script defer src="/__/firebase/init.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
+
+
 
 <!-- Main css -->
 <link rel="stylesheet" href="css/style.css">
@@ -68,8 +65,54 @@ http://www.templatemo.com/tm-486-new-event
     INTRO SECTION
 ============================== -->
 <section id="empresas">
-    <h1></h1>
+	<div class="container">
+		<div class="row">
+			<table style="width:100%" id="tableEmpresas">
+			<tr>
+				<th>Nombre</th>
+				<th>WebPage</th>
+        <th>Telefono</th>
+				<th>Correo Electronico</th>
+				<th>Tipo de Empresa</th>
+				<th>Persona de Contacto</th>
+			</table>
 
+			<script>
+			// Initialize Firebase
+			  var config = {
+			    apiKey: "AIzaSyBPonpL--ZV2Tf0Tb5j2DzRgZgX13st540",
+			    authDomain: "empresasypracticas.firebaseapp.com",
+			    databaseURL: "https://empresasypracticas.firebaseio.com",
+			    projectId: "empresasypracticas",
+			    storageBucket: "empresasypracticas.appspot.com",
+			    messagingSenderId: "699325239796"
+			  };
+			  firebase.initializeApp(config);
+
+				var table = document.getElementById('tableEmpresas');
+				dbRefObject = firebase.database().ref().child('Empresas');
+				var content = '';
+		    dbRefObject.on('value', snap => {
+				data = snap.val();
+				for(var r in data) {
+					var empresa = new Array();
+					var row = table.insertRow(-1);
+					empresa[0] = data[r].nombre;
+					empresa[1] = data[r].webpage;
+          empresa[2] = data[r].telefono;
+          empresa[3] = data[r].correoElectronico;
+					empresa[4]  = data[r].tipo;
+					empresa[5] = data[r].personaDeContacto;
+							for(var c in empresa) {
+								cell = row.insertCell(-1);
+								cell.innerHTML = empresa[c];
+							}
+				 	}
+			});
+
+</script>
+  </div>
+ </div>
 </section>
 
 

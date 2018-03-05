@@ -105,13 +105,13 @@ http://www.templatemo.com/tm-486-new-event
     INTRO SECTION
 ============================== -->
 <section id="alumnado"class="parallax-section">
-
 	<div class="container">
 		<div class="row">
 			<table style="width:100%" id="tableStudents">
 			<tr>
 				<th>Nombre</th>
 				<th>Apellido</th>
+        <th>Nie</th>
 				<th>Curso</th>
 				<th>Empresa</th>
 				<th>Fecha inicio</th>
@@ -121,7 +121,6 @@ http://www.templatemo.com/tm-486-new-event
 				<th>Telefono</th>
 				<th>Tipo Curso</th>
 			</table>
-
 
 			<script>
 			// Initialize Firebase
@@ -145,14 +144,15 @@ http://www.templatemo.com/tm-486-new-event
 					var row = table.insertRow(-1);
 					estudiante[0] = data[r].nom;
 					estudiante[1] = data[r].cognom;
-					estudiante[3]  = data[r].empresa;
-					estudiante[2] = data[r].curso;
-					estudiante[4] = data[r].inicio_practicas;
-					estudiante[5] = data[r].fin_practicas;
-					estudiante[6] = data[r].tareas;
-					estudiante[7] = data[r].correo;
-					estudiante[8] = data[r].telefono;
-					estudiante[9] = data[r].tipo_practicas;
+          estudiante[2] = data[r].nie;
+          estudiante[3] = data[r].curso;
+					estudiante[4]  = data[r].empresa;
+					estudiante[5] = data[r].inicio_practicas;
+					estudiante[6] = data[r].fin_practicas;
+					estudiante[7] = data[r].tareas;
+					estudiante[8] = data[r].correo;
+					estudiante[9] = data[r].telefono;
+					estudiante[10] = data[r].tipo_practicas;
 							for(var c in estudiante) {
 								cell = row.insertCell(-1);
 								cell.innerHTML = estudiante[c];
