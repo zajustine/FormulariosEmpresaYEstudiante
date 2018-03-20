@@ -190,6 +190,34 @@ footer {
 
 
 
+						/*---------------------------------------
+						Tables
+						-----------------------------------------*/
+#tableStudents {
+font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+border-collapse: collapse;
+background-color: #4A9AF1;
+width: 100%
+;
+}
+
+#tableStudents td, #tableStudents th {
+border: 1px solid #ddd;
+padding: 8px;
+}
+
+#tableStudents tr:nth-child(even){background-color: #4A9AF1;}
+
+#tableStudents tr:hover {background-color: #ddd;}
+
+#tableStudents th {
+padding-top: 12px;
+padding-bottom: 12px;
+text-align: left;
+background-color: #66A8EF;
+color: white;
+}
+
 /*---------------------------------------
 Enquestes section
 -----------------------------------------*/

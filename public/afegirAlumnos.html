@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+New Event
+http://www.templatemo.com/tm-486-new-event
+-->
+<title>Afegir nou alumne</title>
+<meta name="description" content="">
+<meta name="author" content="">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/owl.theme.css">
+<link rel="stylesheet" href="css/owl.carousel.css">
+
+
+
+	<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+	<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+	 <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+	<script type="text/javascript" src="js/addStudent.js"></script>
+
+
+<!-- Main css -->
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Google Font -->
+<link href='https://fonts.googleapis.com/css?family=Poppins:400,500,600' rel='stylesheet' type='text/css'>
+
+<style>
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=email] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+input[type=email]:hover {
+    background-color: #45a049;
+}
+
+
+</style>
+
+
+</head>
+<body overflow-y="auto" data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
+
+<!-- =========================
+     NAVIGATION LINKS
+============================== -->
+<div class="navbar navbar-fixed-top custom-navbar" role="navigation">
+	<div class="container">
+
+		<!-- navbar header -->
+		<div class="navbar-header">
+			<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="icon icon-bar"></span>
+				<span class="icon icon-bar"></span>
+				<span class="icon icon-bar"></span>
+			</button>
+			<a class="navbar-brand"></a>
+		</div>
+
+		<div class="collapse navbar-collapse">
+			<div>
+				<ul class="nav navbar-nav navbar-right">
+				<li><a href="alumnado.html" class="smoothScroll">Alumnado</a></li>
+				<li><a href="empresas.html" class="smoothScroll">Empresas</a></li>
+				<li><a href="formularios.html" class="smoothScroll">Formularios</a></li>
+			</div>
+
+		</div>
+
+<br/>
+
+
+	</div>
+</div>
+<!-- =========================
+    INTRO SECTION
+============================== -->
+<section id="enquestes" class="parallax-section">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-12 col-sm-12">
+
+			</div>
+
+<br/><br/><br/><br/><br/><br/>
+					<div>
+						<label class="enquestes">Afegir nou alumne</label><br/>
+						<div ><br/>
+								<form>
+									<b style="color: black; background-color:white;">
+									</b><br/>
+										<label>DNI/NIF:</label><input type="text" id="nie"  />
+										<br/>
+										<label>Nom:</label><input type="text" id="nom"  />
+										<label>Cognoms:</label><input type="text" id="cognom"  />
+									<br/>
+									<label>Email:</label><input type="email" id="correo"  />
+									<label>Número de contacte:</label><input type="text" id="telefono"  />
+									<label>Empresa: </label>
+									<select id="Empresadepracticas" name="menu">
+												 <option value="Accenture">Accenture</option>
+												 <option value="Apple">Apple</option>
+												 <option value="Everis">Everis</option>
+												 <option value="HP">HP</option>
+												 <option value="Google">Google</option>
+										 </select>
+										 <label>Tipus de pràctiques: </label>
+	 									<select id="TipoPracticas">
+	 												 <option value="DUAL">DUAL</option>
+	 												 <option value="FCT">FCT</option>
+	 										 </select>
+									<br/><br/>
+															<label>Cicle:</label>
+															<select id="cicle">
+						 												 <option value="GM">GM</option>
+						 												 <option value="GS">GS</option>
+						 										 </select>
+															<label>Curs<input type="text" id="curso"/></label>
+                              <br/>
+                              <label>Fecha inicio Practicas:</label><input type="text" id="inicio_practicas"  />
+          										<label>Fecha fin practicas:</label><input type="text" id="fin_practicas"  />
+                              <label>Tareas: </label><input type="text" id="tareas"  />
+															<label>Estado de practicas: </label><input type="text" id="estado"  />
+															<button type="button" onclick="writeStudent();">Submit</button>
+															<br/><br/>
+						</form>
+						</div>
+					</div>
+				</div>
+	</div>
+</section>
+
+
+
+<!-- =========================
+    FOOTER SECTION
+============================== -->
+<footer>
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-12 col-sm-12">
+				<p class="wow fadeInUp" data-wow-delay="0.6s">Copyright &copy; 2018 <b>MoGoZa</b>
+
+                    | Design: <a rel="nofollow" href="http://www.templatemo.com/page/1" target="_parent">Templatemo</a></p>
+
+				<ul class="social-icon">
+					<li><a href="#" class="fa fa-facebook wow fadeInUp" data-wow-delay="1s"></a></li>
+					<li><a href="#" class="fa fa-twitter wow fadeInUp" data-wow-delay="1.3s"></a></li>
+					<li><a href="#" class="fa fa-google-plus wow fadeInUp" data-wow-delay="2s"></a></li>
+				</ul>
+
+			</div>
+
+		</div>
+	</div>
+</footer>
+
+
+<!-- Back top -->
+<a href="#back-top" class="go-top"><i class="fa fa-angle-up"></i></a>
+
+
+<!-- =========================
+     SCRIPTS
+============================== -->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.parallax.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/smoothscroll.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/custom.js"></script>
+
+</body>
+</html>
