@@ -152,7 +152,11 @@ input[type=email]:hover {
                               <br/>
                               <label>Fecha inicio Practicas:</label><input type="text" id="inicio_practicas"  />
           										<label>Fecha fin practicas:</label><input type="text" id="fin_practicas"  />
-                              <label>Tareas: </label><input type="text" id="tareas"  />
+															<select multiple id="Tareas">
+																		 <option value="programar">Programar</option>
+																		 <option value="dibujar">Dibujar</option>
+																		  <option value="bailar">Bailar</option>
+																 </select>
 															<label>Estado de practicas: </label><input type="text" id="estado"  />
 															<button type="button" onclick="writeStudent();">Submit</button>
 															<br/><br/>

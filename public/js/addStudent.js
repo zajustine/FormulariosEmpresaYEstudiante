@@ -21,7 +21,7 @@ var fin_practicas;
 var inicio_practicas
 var telefono;
 var tipo_practicas;
-var tareas = str.split(',');
+var tareas;
 var estado;
 var cicle;
 
@@ -59,6 +59,6 @@ function writeStudent()
     estadoPracticas:estado
    });
 
-    alert('Submission successful!');
+    alert('Estudiant afegit amb èxit');
 
 }
