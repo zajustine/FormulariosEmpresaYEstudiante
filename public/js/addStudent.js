@@ -21,10 +21,9 @@ var fin_practicas;
 var inicio_practicas
 var telefono;
 var tipo_practicas;
-var tareas;
+var tareas = str.split(',');
 var estado;
 var cicle;
-
 
 function writeStudent()
 {
@@ -47,6 +46,7 @@ function writeStudent()
     data.child(nie).set({
     nom:nom,
     cognom:cognom,
+    curso:curso,
     empresa:empresa,
     correo:correo,
     cicle:cicle,
