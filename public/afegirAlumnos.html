@@ -2,8 +2,6 @@
 <html lang="en">
 <head>
 <title>Afegir nou alumne</title>
-<meta name="description" content="">
-<meta name="author" content="">
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -15,11 +13,11 @@
 <link rel="stylesheet" href="css/owl.carousel.css">
 
 
-
 	<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
 	<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
 	 <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
 	<script type="text/javascript" src="js/addStudent.js"></script>
+	<script src="js/multiselect.min.js"></script>
 
 
 <!-- Main css -->
@@ -69,7 +67,120 @@ input[type=submit]:hover {
 input[type=email]:hover {
     background-color: #45a049;
 }
+.multiselect-wrapper {
+	width: 180px;
+	display: inline-block;
+	white-space: nowrap;
+	font-size: 12px;
+	font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+}
 
+.multiselect-wrapper .multiselect-input {
+	width: 120px;
+	padding-right: 50px;
+}
+
+.multiselect-wrapper label {
+	display: block;
+	font-size: 12px;
+	font-weight : 600;
+}
+
+.multiselect-wrapper .multiselect-list {
+	z-index: 1;
+	position: absolute;
+	display: none;
+	background-color: white;
+	border: 1px solid grey;
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+	margin-top: -2px;
+}
+
+	.multiselect-wrapper .multiselect-list.active {
+		display: block;
+	}
+
+	.multiselect-wrapper .multiselect-list > span {
+		font-weight: bold;
+	}
+
+	.multiselect-wrapper .multiselect-list .multiselect-checkbox {
+		margin-right: 2px;
+	}
+
+	.multiselect-wrapper .multiselect-list > span,
+	.multiselect-wrapper .multiselect-list li {
+		cursor: default;
+	}
+
+.multiselect-wrapper .multiselect-list {
+	padding: 5px;
+	min-width: 200px;
+}
+
+.multiselect-wrapper ul {
+	list-style: none;
+	display: block;
+	position: relative;
+	padding: 0px;
+	margin: 0px;
+	max-height: 200px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+	.multiselect-wrapper ul li {
+		padding-right: 20px;
+		display: block;
+	}
+
+		.multiselect-wrapper ul li.active {
+			background-color: rgb(0, 102, 255);
+			color: white;
+		}
+
+		.multiselect-wrapper ul li:hover {
+			background-color: rgb(0, 102, 255);
+			color: white;
+		}
+
+.multiselect-input-div {
+	height: 34px;
+}
+
+	.multiselect-input-div input{
+		border: 1px solid #ababab;
+		background : #fff;
+		margin: 5px 0 6px 0;
+		padding: 5px;
+		vertical-align:middle;
+	}
+
+.multiselect-count {
+	position: relative;
+	text-align: center;
+	border-radius: 2px;
+	behavior: url(/Content/Pie/pie.htc);
+	background-color: lightblue;
+	display: inline-block !important;
+	padding: 2px 7px;
+	left: -45px;
+}
+
+.multiselect-dropdown-arrow {
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid black;
+	position: absolute;
+	line-height: 20px;
+	text-align: center;
+	display: inline-block !important;
+	margin-top: 17px;
+	margin-left: -42px;
+}
 
 </style>
 
@@ -111,7 +222,6 @@ input[type=email]:hover {
 <section id="enquestes" class="parallax-section">
 	<div class="container">
 		<div class="row">
-
 			<div class="col-md-12 col-sm-12">
 			</div>
 
@@ -152,11 +262,14 @@ input[type=email]:hover {
                               <br/>
                               <label>Fecha inicio Practicas:</label><input type="text" id="inicio_practicas"  />
           										<label>Fecha fin practicas:</label><input type="text" id="fin_practicas"  />
-															<select multiple id="Tareas">
-																		 <option value="programar">Programar</option>
-																		 <option value="dibujar">Dibujar</option>
-																		  <option value="bailar">Bailar</option>
-																 </select>
+															<label>Tareas: </label>
+															<select id='tareas' multiple>
+	  															<option value='1'>Item 1</option>
+	 																<option value='2'>Item 2</option>
+																	<option value='3'>Item 3</option>
+																	<option value='4'>Item 4</option>
+																	<option value='5'>Item 5</option>
+															</select>
 															<label>Estado de practicas: </label><input type="text" id="estado"  />
 															<button type="button" onclick="writeStudent();">Submit</button>
 															<br/><br/>
@@ -201,6 +314,7 @@ input[type=email]:hover {
 <!-- =========================
      SCRIPTS
 ============================== -->
+<script src="js/multiselect.js"></script>
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.parallax.js"></script>
@@ -208,6 +322,9 @@ input[type=email]:hover {
 <script src="js/smoothscroll.js"></script>
 <script src="js/wow.min.js"></script>
 <script src="js/custom.js"></script>
+<script>
+	document.multiselect('#tareas');
+</script>
 
 </body>
 </html>

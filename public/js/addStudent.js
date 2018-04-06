@@ -40,7 +40,7 @@ function writeStudent()
     inicio_practicas = document.getElementById('inicio_practicas').value;
     telefono = document.getElementById('telefono').value;
     tipo_practicas= document.getElementById('TipoPracticas').value;
-    tareas = document.getElementById('tareas').value;
+    tareas = document.multiselect('tareas').value;
     estado = document.getElementById('estado').value;
 
     data.child(nie).set({
