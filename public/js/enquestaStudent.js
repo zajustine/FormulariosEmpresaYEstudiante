@@ -35,7 +35,8 @@ var ref = new Firebase("https://empresasypracticas.firebaseio.com/");
 function writeStudentData()
 {
 
-  var studentData = ref.child('FormularioEmpresa/');
+  var id = 'Formulario'+Empresadepracticas;
+  var studentData = ref.child(id+'/');
 
   dniStudent = document.getElementById('dniStudent').value;
   snom = document.getElementById('snom').value;
@@ -53,7 +54,7 @@ function writeStudentData()
   ValoracionGlobalS = document.getElementById('ValoracionGlobalS').value;
   Scomentarios = document.getElementById('Scomentarios').value;
 
-  studentData.child(Empresadepracticas).set({
+  studentData.child(dniStudent).set({
   snom:snom,
   scognom:scognom,
   emailStudent:emailStudent,
