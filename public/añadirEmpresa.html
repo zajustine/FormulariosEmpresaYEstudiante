@@ -195,23 +195,22 @@ input[type=email]:hover {
 	<div class="container">
 
 		<!-- navbar header -->
-		<div class="navbar-header">
-			<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-				<span class="icon icon-bar"></span>
-				<span class="icon icon-bar"></span>
-				<span class="icon icon-bar"></span>
-			</button>
-			<a class="navbar-brand"></a>
-		</div>
 		<div class="collapse navbar-collapse">
-			<div>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="alumnado.html" class="smoothScroll">Alumnat</a></li>
-	        <li><a href="empresas.html" class="smoothScroll">Empreses</a></li>
-	        <li><a href="formularios.html" class="smoothScroll">Formularis</a></li>
-			</div>
+					<li><a href="alumnado.html" class="smoothScroll">Alumnado	</a></li>
+					<li><a href="empresas.html" class="smoothScroll">
+						<div class="dropdown">
+							<span>Empresas</span>
+							<div class="dropdown-content">
+								<p><a>Añadir nueva empresa</a></p>
+								<p><a href="empresas.html" class="smoothScroll">Mostrar empresas</a></p>
+							</div>
+						</div>
+					</a></li>
+				<li><a href="formularios.html" class="smoothScroll">Formularios</a></li>
+			</ul>
+
 		</div>
-<br/>
 
 
 	</div>
@@ -227,52 +226,21 @@ input[type=email]:hover {
 
 <br/><br/><br/><br/><br/><br/>
 					<div>
-						<label class="enquestes">Afegir nou alumne</label><br/>
+						<label class="enquestes">Añadir nueva empresa:</label><br/>
 						<div ><br/>
 								<form>
 									<b style="color: black; background-color:white;">
 									</b><br/>
-										<label>DNI/NIF:</label><input type="text" id="nie"  />
-										<br/>
-										<label>Nom:</label><input type="text" id="nom"  />
-										<label>Cognoms:</label><input type="text" id="cognom"  />
+									<label>Nombre empresa:</label><input type="text" id="nombre"  />
 									<br/>
-									<label>Email:</label><input type="email" id="correo"  />
-									<label>Número de contacte:</label><input type="text" id="telefono"  />
-									<label>Empresa: </label>
-									<select id="Empresadepracticas" name="menu">
-												 <option value="Accenture">Accenture</option>
-												 <option value="Apple">Apple</option>
-												 <option value="Everis">Everis</option>
-												 <option value="HP">HP</option>
-												 <option value="Google">Google</option>
-										 </select>
-										 <label>Tipus de pràctiques: </label>
-	 									<select id="TipoPracticas">
-	 												 <option value="DUAL">DUAL</option>
-	 												 <option value="FCT">FCT</option>
-	 										 </select>
-									<br/><br/>
-															<label>Cicle:</label>
-															<select id="cicle">
-						 												 <option value="GM">GM</option>
-						 												 <option value="GS">GS</option>
-						 										 </select>
-															<label>Curs<input type="text" id="curso"/></label>
-                              <br/>
-                              <label>Fecha inicio Practicas:</label><input type="text" id="inicio_practicas"  />
-          										<label>Fecha fin practicas:</label><input type="text" id="fin_practicas"  />
-															<label>Tareas: </label>
-															<select id='tareas' multiple>
-	  															<option value='1'>Item 1</option>
-	 																<option value='2'>Item 2</option>
-																	<option value='3'>Item 3</option>
-																	<option value='4'>Item 4</option>
-																	<option value='5'>Item 5</option>
-															</select>
-															<label>Estado de practicas: </label><input type="text" id="estado"  />
-															<button type="button" onclick="writeStudent();">Submit</button>
-															<br/><br/>
+									<label>Tipo de empresa:</label><input type="text" id="tipo"  />
+									<label>Correo Electrónico:</label><input type="email" id="correoElectronico"  />
+									<br/>
+									<label>Telefono:</label><input type="text" id="telefono"  />
+									<label>Webpage:</label><input type="text" id="webpage"  />
+                  <label>Persona de contacto:</label><input type="text" id="personaDeContacto"  />
+									<button type="button" onclick="writeCompany();">Submit</button>
+								  <br/><br/>
 						</form>
 						</div>
 					</div>

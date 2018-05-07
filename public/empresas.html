@@ -25,6 +25,35 @@ http://www.templatemo.com/tm-486-new-event
 
 <!-- Main css -->
 <link rel="stylesheet" href="css/style.css">
+<style>
+#tableEmpresas {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	background-color: #4A9AF1;
+	width: 100%
+	;
+}
+
+#tableEmpresas td, #tableEmpresas th{
+	border: 1px solid #ddd;
+	padding: 8px;
+	text-align: left;
+	}
+
+
+#tableEmpresas tr:nth-child(even){background-color: #4A9AF1;}
+
+#tableEmpresas tr:hover { background-color: #ddd;}
+
+#tableEmpresas th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	background-color: #66A8EF;
+	color: white;
+}
+
+</style>
+
 
 <!-- Google Font -->
 <link href='https://fonts.googleapis.com/css?family=Poppins:400,500,600' rel='stylesheet' type='text/css'>
@@ -49,32 +78,39 @@ http://www.templatemo.com/tm-486-new-event
 		</div>
 
 		<div class="collapse navbar-collapse">
-
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="alumnado.html" class="smoothScroll">Alumnado</a></li>
-				<li><a href="#empresas" class="smoothScroll">Empresas</a></li>
-				<li><a href="formularios.html" class="smoothScroll">Formularios</a></li>
-			</ul>
-
-		</div>
+				<li><a href="alumnado.html" class="smoothScroll">Alumnado	</a></li>
+				<li><a href="empresas.html" class="smoothScroll">
+					<div class="dropdown">
+						<span>Empresas</span>
+						<div class="dropdown-content">
+							<p><a href="añadirEmpresa.html" class="smoothScroll">Añadir nueva empresa</a></p>
+							<p><a>Mostrar empresas</a></p>
+						</div>
+					</div>
+				</a></li>
+			<li><a href="formularios.html" class="smoothScroll">Formularios</a></li>
+		</ul>
 
 	</div>
+ </div>
 </div>
 
 <!-- =========================
     INTRO SECTION
 ============================== -->
-<section id="empresas">
+<section id="empresas" class="parallax-section">
 	<div class="container">
 		<div class="row">
 			<table style="width:100%" id="tableEmpresas">
 			<tr>
-				<th>Nombre</th>
+				<th> Nombre</th>
 				<th>WebPage</th>
         <th>Telefono</th>
 				<th>Correo Electronico</th>
 				<th>Tipo de Empresa</th>
 				<th>Persona de Contacto</th>
+			</tr>
 			</table>
 
 			<script>

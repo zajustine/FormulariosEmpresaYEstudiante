@@ -352,7 +352,8 @@ margin-top: 10px;
 
 .custom-navbar .nav li a:hover {
     background: transparent;
-    color: #66ccff;
+    //color: #66ccff;
+		color: #135a91;
 }
 
 .custom-navbar .navbar-nav > li > a:hover,
