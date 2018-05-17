@@ -5,7 +5,7 @@
 New Event
 http://www.templatemo.com/tm-486-new-event
 -->
-<title>ALUMNADO | Formulario</title>
+<title>ALUMNAT | Formulari</title>
 <meta name="description" content="">
 <meta name="author" content="">
 <meta charset="UTF-8">
@@ -24,6 +24,8 @@ http://www.templatemo.com/tm-486-new-event
 	<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
 	 <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
 	<script type="text/javascript" src="js/enquestaStudent.js"></script>
+
+
 
 
 <!-- Main css -->
@@ -48,15 +50,15 @@ http://www.templatemo.com/tm-486-new-event
 				<span class="icon icon-bar"></span>
 				<span class="icon icon-bar"></span>
 			</button>
-			<a class="navbar-brand">Formulario | Alumnado </a>
+			<a class="navbar-brand">Formulari | Alumnat </a>
 		</div>
 
 		<div class="collapse navbar-collapse">
 			<div>
 				<ul class="nav navbar-nav navbar-right">
-				<li><a href="alumnado.html" class="smoothScroll">Alumnado</a></li>
-				<li><a href="empresas.html" class="smoothScroll">Empresas</a></li>
-				<li><a href="formularios.html" class="smoothScroll">Formularios</a></li>
+				<li><a href="alumnado.html" class="smoothScroll">Alumnat</a></li>
+				<li><a href="empresas.html" class="smoothScroll">Empreses</a></li>
+				<li><a href="formularios.html" class="smoothScroll">Formularis</a></li>
 			</div>
 
 		</div>
@@ -79,6 +81,29 @@ http://www.templatemo.com/tm-486-new-event
 
 <br/><br/><br/><br/><br/><br/>
 					<div>
+
+						<script>
+						// Initialize Firebase
+
+
+
+						dbRefObject = firebase.database().ref().child('Empresas');
+
+						dbRefObject.once('value', function(snapshot) {
+						  snapshot.forEach(function(childSnapshot) {
+						    var childKey = childSnapshot.key;
+						    var childData = childSnapshot.val();
+								console.log(childKey);
+								console.log(childData);
+								var t = "Sigma";
+							//	console.log(t);
+								document.getElementById("Empresadepracticas").innerHTML(childKey);
+						});
+
+
+						});
+					</script>
+
 						<label class="enquestes">ENQUESTA SATISFACCIÓ ALUMNES</label><br/>
 						<div ><br/>
 							<p style="color:black;">
@@ -98,11 +123,7 @@ http://www.templatemo.com/tm-486-new-event
 									<label>Número de contacte:</label><input type="text" id="telefono"  />
 									<label>Empresa: </label>
 									<select id="Empresadepracticas" name="menu">
-												 <option value="Accenture">Accenture</option>
-												 <option value="Apple">Apple</option>
-												 <option value="Everis">Everis</option>
-												 <option value="HP">HP</option>
-												 <option value="Google">Google</option>
+												 <option></option>
 										 </select>
 										 <label>Tipus de pràctiques: </label>
 	 									<select id="TipoPracticas">
@@ -145,7 +166,7 @@ http://www.templatemo.com/tm-486-new-event
 															<label>La teva opinió és molt valuosa (comentaris addicionals).</label>
 															<br/>
 															<textarea rows="4" cols="50" id="Scomentarios"></textarea><br/>
-															<button type="button" onclick="writeStudentData();">Submit</button>
+															<button type="button" onclick="writeStudentData();">Envia</button>
 															<br/><br/>
 
 						</form>
